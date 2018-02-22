@@ -1,5 +1,9 @@
 
 $(document).ready(function() {
+	var opponentChosen = 0;
+	var characterChosen = 0;
+	var opponents = [];
+
 	var bob = {
 		healthPoints: 70,
 		attackPoints: 10,
@@ -37,57 +41,31 @@ $(document).ready(function() {
 
 
 	$(document).on("click", ".character", function() {
+		if (characterChosen === 0 && opponentChosen === 0) {
 		$(this).remove();
 		$(this).appendTo(".offense-character");
 		$("h2").text("Select your opponent!");
-		$(this).text(this.healthPoints);
 		$(".characters-list").appendTo(".opponents");
 		$(".opponents").addClass("brawl");
-	});
+		characterChosen++;
+	}
+	else if (characterChosen !== 0 && opponentChosen === 0) {
+		$(this).remove();
+		$(this).appendTo(".defense-character");
+		$("h2").text("Get ready for a brawl!");
+		opponentChosen++;
+	}
 
-
-
-
-/*
-	$("img#linda").on("click", function() {
-		$("img#linda").remove();
-	});
-
-	$("img#gene").on("click", function() {
-		$("img#gene").remove();
-	});
-
-	$("img#louise").on("click", function() {
-		$("img#louise").remove();
-	});
-
-	$("img#tina").on("click", function() {
-		$("img#tina").remove();
-	});
-
-
-
-
-/*
-	$("#bob").on("click", function() {
+	//if opponentChosen !== 0, then brawl button function
+	//brawl button -> subtract attack from HP, counter
+	//if opponentChosen HP <= 0, hide(), select next
+	//if characterChosen <= 0, game ends, user loses
+	//if opponents === 0, game ends, user wins
 
 	});
 
-	$("#linda").on("click", function() {
 
-	});
 
-	$("#tina").on("click", function() {
 
-	});
-
-	$("#gene").on("click", function() {
-
-	});
-
-	$("#louise").on("click", function() {
-
-	});
-*/
 
 });

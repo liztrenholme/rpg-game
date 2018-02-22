@@ -1,0 +1,77 @@
+body {
+	background-color: #BAD9DF;
+	background-image: url("../images/store.jpg");
+	background-repeat: no-repeat;
+	background-position: 20% 0;
+}
+
+.spacer {
+	height: 400px;
+	width: 800px;
+}
+
+h1, h2, p {
+		font-family: 'Shadows Into Light Two', comic sans, sans serif;
+}
+p#bob, p#linda, p#gene, p#louise, p#tina {
+	position: relative;
+	background-color: #fff;
+	font-weight: bolder;
+	width: 18px;
+	margin: -15px;
+	text-align: center;
+}
+
+h1 {
+	background-color: white;
+	border: 2px solid black;
+	text-align: center;
+	opacity: .85;
+	font-size: 400%;
+	font-weight: bolder;
+}
+
+
+h2 {
+	background-color: white;
+	border: 2px solid black;
+	text-align: center;
+	opacity: .85;
+}
+
+.defender-area {
+	float: none;
+	margin-left: 40px;
+	border: 2px solid black;
+	width: 350px;
+	height: 200px;
+	background-image: url("../images/humanflesh.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #BAD9DF;
+	background-blend-mode: luminosity;
+	opacity: .95;
+	clear: both;
+}
+
+.opponents {
+	border: 2px solid black;
+	height: 200px;
+	background-image: url("../images/humanflesh2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #BAD9DF;
+	background-blend-mode: luminosity;
+	opacity: .95;
+}
+
+.blah {
+	height: 200px;
+	opacity: 0;
+}
+
+.brawl {
+	border: 8px solid red;
+	background-color: red;
+	background-blend-mode: darken;
+}

@@ -56,6 +56,13 @@ $(document).ready(function() {
 		opponentChosen++;
 	}
 
+	else if (characterChosen !== 0 && opponentChosen !== 0) {
+		$("button.btn").on("click", function() {
+			var brawlResult = characterChosen.healthPoints - opponentChosen.attackPoints;
+			console.log(brawlResult);
+		});
+	}
+
 	//if opponentChosen !== 0, then brawl button function
 	//brawl button -> subtract attack from HP, counter
 	//if opponentChosen HP <= 0, hide(), select next

@@ -182,7 +182,6 @@ if (bob.healthPoints < 1 && bob !== offender) {
 	$(".defense-character").empty();
 	opponentChosen = false;
 	opponents.push("bob");
-	console.log(opponents[0]);
 	$("button#brawl").hide();
 	$("h2").text("Choose your next opponent!");
 	clickyCharacters();
@@ -191,14 +190,12 @@ else if (bob.healthPoints < 1 && bob === offender) {
 	$("div#bob").hide();
 	$(".defense-character").empty();
 	characterChosen = false;
-	console.log(defender);
 	$("h2").text("Uhhhhhhh. Game over.");
 }
 else if (bob.healthpoints < 1 && defender.healthPoints < 1) {
 	$("div#bob").hide();
 	$(".defense-character").empty();
 	characterChosen = false;
-	console.log(defender);
 	$("h2").text("Uhhhhhhh. Game over.");
 }
 else if (opponents.length === 4) {
@@ -220,7 +217,6 @@ else if (linda.healthPoints < 1 && linda === offender) {
 	$(".defense-character").empty();
 	characterChosen = false;
 	$("h2").text("Uhhhhhhh. Game over.");
-	console.log(defender);
 }
 else if (linda.healthpoints < 1 && defender.healthPoints < 1) {
 	$("div#linda").hide();
@@ -248,13 +244,11 @@ else if (tina.healthPoints < 1 && tina === offender) {
 	$(".defense-character").empty();
 	characterChosen = false;
 	$("h2").text("Uhhhhhhh. Game over.");
-	console.log(defender);
 }
 else if (tina.healthpoints < 1 && defender.healthPoints < 1) {
 	$("div#tina").hide();
 	$(".defense-character").empty();
 	characterChosen = false;
-	console.log(defender);
 	$("h2").text("Uhhhhhhh. Game over.");
 }
 else if (opponents.length === 4) {
@@ -276,7 +270,6 @@ else if (gene.healthPoints < 1 && gene === offender) {
 	$(".defense-character").empty();
 	characterChosen = false;
 	$("h2").text("Uhhhhhhh. Game over.");
-	console.log(defender);
 }
 else if (gene.healthpoints < 1 && defender.healthPoints < 1) {
 	$("div#gene").hide();
@@ -304,13 +297,11 @@ else if (louise.healthPoints < 1 && louise === offender) {
 	$(".defense-character").empty();
 	characterChosen = false;
 	$("h2").text("Uhhhhhhh. Game over.");
-	console.log(defender);
 }
 else if (louise.healthpoints < 1 && defender.healthPoints < 1) {
 	$("div#louise").hide();
 	$(".defense-character").empty();
 	characterChosen = false;
-	console.log(defender);
 	$("h2").text("Uhhhhhhh. Game over.");
 }
 else if (opponents.length === 4) {

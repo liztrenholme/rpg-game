@@ -47,8 +47,6 @@ function clickyCharacters() {
 	$("div#bob").on("click", function() {
 		if (characterChosen === false && opponentChosen === false) {
 			offender = bob;
-			opponents = [linda, tina, gene, louise];
-			console.log(opponents);
 			$(this).remove();
 			$(this).appendTo(".offense-character");
 			$("h2").text("Select your opponent!");
@@ -72,7 +70,6 @@ function clickyCharacters() {
 	$("div#linda").on("click", function() {
 		if (characterChosen === false && opponentChosen === false) {
 			offender = linda;
-			opponents = [bob, tina, gene, louise];
 			$(this).remove();
 			$(this).appendTo(".offense-character");
 			$("h2").text("Select your opponent!");
@@ -96,7 +93,6 @@ function clickyCharacters() {
 	$("div#tina").on("click", function() {
 		if (characterChosen === false && opponentChosen === false) {
 			offender = tina;
-			opponents = [bob, linda, gene, louise];
 			$(this).remove();
 			$(this).appendTo(".offense-character");
 			$("h2").text("Select your opponent!");
@@ -120,7 +116,6 @@ function clickyCharacters() {
 	$("div#gene").on("click", function() {
 		if (characterChosen === false && opponentChosen === false) {
 			offender = gene;
-			opponents = [bob, linda, tina, louise];
 			$(this).remove();
 			$(this).appendTo(".offense-character");
 			$("h2").text("Select your opponent!");
@@ -144,7 +139,6 @@ function clickyCharacters() {
 	$("div#louise").on("click", function() {
 		if (characterChosen === false && opponentChosen === false) {
 			offender = louise;
-			opponents = [bob, linda, tina, gene];
 			$(this).remove();
 			$(this).appendTo(".offense-character");
 			$("h2").text("Select your opponent!");
@@ -165,90 +159,163 @@ function clickyCharacters() {
 }
 clickyCharacters();
 
+
 // brawl button function and update health points for each character
 $("button#brawl").on('click', function(){
-	if (opponentChosen === true) {
-		offender.counterAttackPower += offender.attackPoints;
+	if (opponentChosen === true && characterChosen === true) {
+		offender.counterAttackPower = Math.round(offender.counterAttackPower * 1.05);
 		defender.healthPoints = defender.healthPoints - offender.counterAttackPower;
 		offender.healthPoints = offender.healthPoints - defender.counterAttackPower;
-		console.log(defender);
-		console.log(offender);
-		$("p#bob").text(bob.healthPoints);
-		$("p#linda").text(linda.healthPoints);
-		$("p#tina").text(tina.healthPoints);
-		$("p#gene").text(gene.healthPoints);
-		$("p#louise").text(louise.healthPoints);
-	}
-	if (bob.healthPoints <= 0) {
-		$("div#bob").hide();
-		$(".defense-character").empty();
-		opponentChosen = false;
-		$("button#brawl").hide();
-		$("h2").text("Choose your next opponent!");
-		clickyCharacters();
-		if (bob === offender && bob.healthPoints <= 0 && defender.healthPoints > 0){
-			$("h2").text("Uhhhhhhh. Game over.");
-			console.log(defender);
-		}
-	}
-	if (linda.healthPoints <= 0) {
-		$("div#linda").hide();
-		$(".defense-character").empty();
-		opponentChosen = false;
-		$("button#brawl").hide();
-		$("h2").text("Choose your next opponent!");
-		clickyCharacters();
-		if (linda === offender && linda.healthPoints <= 0 && defender.healthPoints > 0){
-			$("h2").text("Uhhhhhhh. Game over.");
-			console.log(defender);
-		}
-	}
-	if (tina.healthPoints <= 0) {
-		$("div#tina").hide();
-		$(".defense-character").empty();
-		opponentChosen = false;
-		$("button#brawl").hide();
-		$("h2").text("Choose your next opponent!");
-		clickyCharacters();
-		if (tina === offender && tina.healthPoints <= 0 && defender.healthPoints > 0){
-			$("h2").text("Uhhhhhhh. Game over.");
-			console.log(defender);
-		}
-	}
-	if (gene.healthPoints <= 0) {
-		$("div#gene").hide();
-		$(".defense-character").empty();
-		opponentChosen = false;
-		$("button#brawl").hide();
-		$("h2").text("Choose your next opponent!");
-		clickyCharacters();
-		if (gene === offender && gene.healthPoints <= 0 && defender.healthPoints > 0){
-			$("h2").text("Uhhhhhhh. Game over.");
-			console.log(defender);
-		}
-	}
-	if (louise.healthPoints <= 0) {
-		$("div#louise").hide();
-		$(".defense-character").empty();
-		opponentChosen = false;
-		$("button#brawl").hide();
-		$("h2").text("Choose your next opponent!");
-		clickyCharacters();
-		if (louise === offender && louise.healthPoints <= 0 && defender.healthPoints > 0){
-			$("h2").text("Uhhhhhhh. Game over.");
-			console.log(defender);
-		}
-	}
 
-	
-	//	reset();
+// displaying health points above each character
+$("p#bob").text(bob.healthPoints);
+$("p#linda").text(linda.healthPoints);
+$("p#tina").text(tina.healthPoints);
+$("p#gene").text(gene.healthPoints);
+$("p#louise").text(louise.healthPoints);
+}
 
 
+// bob
+if (bob.healthPoints < 1 && bob !== offender) {
+	$("div#bob").hide();
+	$(".defense-character").empty();
+	opponentChosen = false;
+	opponents.push("bob");
+	console.log(opponents[0]);
+	$("button#brawl").hide();
+	$("h2").text("Choose your next opponent!");
+	clickyCharacters();
+}
+else if (bob.healthPoints < 1 && bob === offender) {
+	$("div#bob").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (bob.healthpoints < 1 && defender.healthPoints < 1) {
+	$("div#bob").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (opponents.length === 4) {
+	$("h2").text("You won! Butts, butts, butts!!");
+}
+
+// linda
+if (linda.healthPoints < 1 && linda !== offender) {
+	$("div#linda").hide();
+	$(".defense-character").empty();
+	opponentChosen = false;
+	opponents.push("linda");
+	$("button#brawl").hide();
+	$("h2").text("Choose your next opponent!");
+	clickyCharacters();
+}
+else if (linda.healthPoints < 1 && linda === offender) {
+	$("div#linda").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	$("h2").text("Uhhhhhhh. Game over.");
+	console.log(defender);
+}
+else if (linda.healthpoints < 1 && defender.healthPoints < 1) {
+	$("div#linda").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (opponents.length === 4) {
+	$("h2").text("You won! Butts, butts, butts!!");
+}
+
+// tina
+if (tina.healthPoints < 1 && tina !== offender) {
+	$("div#tina").hide();
+	$(".defense-character").empty();
+	opponentChosen = false;
+	opponents.push("tina");
+	$("button#brawl").hide();
+	$("h2").text("Choose your next opponent!");
+	clickyCharacters();
+}
+else if (tina.healthPoints < 1 && tina === offender) {
+	$("div#tina").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	$("h2").text("Uhhhhhhh. Game over.");
+	console.log(defender);
+}
+else if (tina.healthpoints < 1 && defender.healthPoints < 1) {
+	$("div#tina").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (opponents.length === 4) {
+	$("h2").text("You won! Butts, butts, butts!!");
+}
+
+// gene
+if (gene.healthPoints < 1 && gene !== offender) {
+	$("div#gene").hide();
+	$(".defense-character").empty();
+	opponentChosen = false;
+	opponents.push("gene");
+	$("button#brawl").hide();
+	$("h2").text("Choose your next opponent!");
+	clickyCharacters();
+}
+else if (gene.healthPoints < 1 && gene === offender) {
+	$("div#gene").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	$("h2").text("Uhhhhhhh. Game over.");
+	console.log(defender);
+}
+else if (gene.healthpoints < 1 && defender.healthPoints < 1) {
+	$("div#gene").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (opponents.length === 4) {
+	$("h2").text("You won! Butts, butts, butts!!");
+}
+
+// louise
+if (louise.healthPoints < 1 && louise !== offender) {
+	$("div#louise").hide();
+	$(".defense-character").empty();
+	opponentChosen = false;
+	opponents.push("louise");
+	$("button#brawl").hide();
+	$("h2").text("Choose your next opponent!");
+	clickyCharacters();
+}
+else if (louise.healthPoints < 1 && louise === offender) {
+	$("div#louise").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	$("h2").text("Uhhhhhhh. Game over.");
+	console.log(defender);
+}
+else if (louise.healthpoints < 1 && defender.healthPoints < 1) {
+	$("div#louise").hide();
+	$(".defense-character").empty();
+	characterChosen = false;
+	console.log(defender);
+	$("h2").text("Uhhhhhhh. Game over.");
+}
+else if (opponents.length === 4) {
+	$("h2").text("You won! Butts, butts, butts!!");
+}
 });
-
-
-
-
-
 });
 

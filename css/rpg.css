@@ -22,8 +22,17 @@ p#bob, p#linda, p#gene, p#louise, p#tina {
 	text-align: center;
 }
 
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+}
+
 .char-score {
 	font-size: 200%;
+}
+
+.bob, .linda, .gene, .tina, .louise {
+	display: inline-flex;
 }
 
 h1 {

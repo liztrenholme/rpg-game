@@ -2,7 +2,7 @@ body {
 	background-color: #BAD9DF;
 	background-image: url("../images/store.jpg");
 	background-repeat: no-repeat;
-	background-position: 20% 0;
+	background-position: 0% 15%;
 }
 
 .spacer {
@@ -25,6 +25,11 @@ p#bob, p#linda, p#gene, p#louise, p#tina {
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto auto;
+}
+
+.grid-container-2 {
+	display: grid;
+	grid-template-columns: auto auto;
 }
 
 .char-score {
@@ -87,4 +92,13 @@ h2 {
 	border: 8px solid red;
 	background-color: red;
 	background-blend-mode: darken;
+}
+
+/* Media queries for optimized mobile view */
+@media only screen and (max-width: 640px) {
+    .container {
+		width: 95%;
+		margin: 5%;
+	}
+	
 }

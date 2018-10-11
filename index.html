@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/rpg.css">
 	<title>Burger Brawl!</title>
 </head>
+
 <body>
 	<div class="container">
 		<div class="row spacer">
-			<div class="col-xs-1 col-sm-1 col-md-1">
+			<div class="col-md-1">
 			</div>
-			<div class="col-xs-7 col-sm-7 col-md-7">
+			<div class="col-md-7">
 				<h1>Burger Brawl!</h1>
 			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
+			<div class="col-md-2">
 			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
+			<div class="col-md-2">
 				<div class="boxy">
-					
+
 				</div>
 			</div>
 		</div>
 		<div class="row characters-list">
-			<div class="col-xs-2 col-sm-2 col-md-2">
+			<div class="col-md-2">
 				<div class="character">
-					<div id="bob"><p id="bob"></p><img src="images/bob.png" id="bob">
+					<div class="char-score" id="bob">
+						<p id="bob"></p><img src="images/bob.png" id="bob">
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-1 col-sm-1 col-md-1">
+			<div class="col-md-1">
 				<div class="character">
 					<div id="linda">
-					<p id="linda"></p><img src="images/linda.png" id="linda">
-				</div>
+						<p class="char-score" id="linda"></p><img src="images/linda.png" id="linda">
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2">
+			<div class="col-md-2">
 				<div class="character">
 					<div id="gene">
-					<p id="gene"></p><img src="images/gene.png" id="gene">
-				</div>
+						<p class="char-score" id="gene"></p><img src="images/gene.png" id="gene">
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-1 col-sm-1 col-md-1">
+			<div class="col-md-1">
 				<div class="character">
 					<div id="louise">
-					<p id="louise"></p><img src="images/louise.png" id="louise">
-				</div>
+						<p class="char-score" id="louise"></p><img src="images/louise.png" id="louise">
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-1 col-sm-1 col-md-1">
+			<div class="col-md-1">
 				<div class="character">
 					<div id="tina">
-					<p id="tina"></p><img src="images/tina.png" id="tina">
-				</div>
+						<p class="char-score" id="tina"></p><img src="images/tina.png" id="tina">
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-5 col-sm-5 col-md-5">
+			<div class="col-md-5">
 				<div class="defender-area">
 					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4 offense-character">
+						<div class="col-md-4">
+							<div class="offense-character"></div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<div class="col-xs-3 col-sm-3 col-md-3 defense-character">
+						<div class="col-md-4">
+							<div class="defense-character">
 							</div>
 						</div>
 					</div>
@@ -74,27 +79,28 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-1 col-sm-1 col-md-1">
+			<div class="col-md-1">
 			</div>
 
-			<div class="col-xs-4 col-sm-4 col-md-4">
+			<div class="col-md-4">
 				<h2>Select your character!</h2>
 			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3">
+			<div class="col-md-3">
 				<button type="button" class="btn btn-danger" id="brawl">Brawl!</button>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1 col-sm-1 col-md-1">
+		<div class="col-md-1">
 		</div>
-		<div class="col-xs-7 col-sm-7 col-md-7 opponents">
+		<div class="col-md-7 opponents">
 		</div>
-		<div class="col-xs-4 col-sm-4 col-md-4 blah">
+		<div class="col-md-4 blah">
 		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script src="scripts/rpg.js"></script>
 </body>
+
 </html>
